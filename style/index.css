@@ -1,0 +1,193 @@
+*{
+    margin: 0%;
+}
+
+:root{
+    --main-color: #830249;
+    --sec-color: #F2C744;
+    --ter-color: #F20587;
+    --cua-color: #d6ced3;
+    --ult-color: #2cadb1;
+    --ya-color: #3ec760;
+}
+
+body{
+    background-color: var(--main-color);
+    color: rgb(223, 217, 209);
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+input[type=button]{
+    background-color: #d6d6d6;
+    color: black;
+    border: none;
+    width: 30%;
+    font-weight: bold;
+    padding: 12px 28px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 2px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+input[type=button]:hover{
+    background-color: black;
+    color: #d6d6d6;
+}
+#btn_open_win{
+    background-color: var(--sec-color) !important;
+    color: black;
+    border-radius: 5px;
+    width: 400px !important;
+}
+#btn_open_win:hover{
+    background-color: #d6d6d6!important;
+    color: rgb(0, 0, 0);
+}
+#btn_undo, #btn_redo{
+    background-color: #d6d6d6 !important;
+    color: black;
+    border-radius: 5px;
+    width: 190px !important;
+}
+#btn_undo:hover,#btn_redo:hover{
+    background-color: black !important;
+    color: #ffffff;
+}
+#btn_goto_rounds{
+    background-color: #d6d6d6 !important;
+    color: black;
+    border-radius: 5px;
+    width: 190px !important;
+}
+#btn_goto_rounds:hover{
+    background-color: black !important;
+    color: #ffffff;
+}
+/* Botones respuestas */
+#answers input[type=button]{
+    background-color: var(--sec-color) !important;
+    color: black;
+    border: blanchedalmond;
+    border-radius: 5px;
+    width: 33% !important;
+}
+#answers input[type=button]:hover{
+    background-color: #d6d6d6 !important;
+    color: black;
+}
+/* Botones error */
+#btn_miss0,#btn_miss1{
+    background-color: rgba(255, 0, 0, 0.741)!important;
+    color: white;
+    border-radius: 5px;
+    width: 33% !important;
+}
+#btn_miss0:hover,#btn_miss1:hover{
+    background-color: #a02424 !important;
+    color: white;
+}
+/* Botones gana  */
+#btn_left_wins,#btn_right_wins{
+    background-color: green !important;
+    color: white;
+    border-radius: 5px;
+    width: 33% !important;
+}
+#btn_left_wins:hover,#btn_right_wins:hover{
+    background-color: #0f4115 !important;
+    color: white;
+}
+/* Boton siguiente */
+#btn_next_round{
+    background-color: var(--sec-color) !important;
+    color: black;
+    border-radius: 5px;
+    width: 33% !important;
+}
+#btn_next_round:hover{
+    background-color: #d6d6d6 !important;
+    color: black;
+}
+/* Boton final */
+#btn_goto_finals{
+    background-color: var(--main-color) !important;
+    color: white;
+    border-radius: 5px;
+    width: 33% !important;
+}
+#btn_goto_finals:hover{
+    background-color: #d6d6d6 !important;
+    color: black;
+}
+.name-team input[type=text] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.header{
+    grid-area: header;
+    background-color: var(--main-color);
+    padding: 10px;
+    text-align: center;
+    font-size: 35px;
+}
+
+.header h5{
+    font-size: 25px;
+    padding-bottom: 2%;
+    color: var(--cua-color);
+}
+.header p{
+    font-size: 15px;
+}
+
+.screen{
+    grid-area: screen;
+    background-color: var(--ult-color);
+    padding: 50px;
+    text-align: center;
+}
+.screen h2,h3,h5,label{
+    color: black;
+    font-weight: bold;
+}
+.sounds{
+    grid-area: sounds;
+    background-color: var(--main-color);
+    padding: 30px;
+    text-align: center;
+}
+.tabla{
+    display: flex;
+}
+.tabla ul{
+    list-style-type: none;
+}
+.tabla input[type=text],select {
+    width: 45%;
+    padding: 8px 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 950px){
+    #answers input[type=button]{
+        width: 100% !important;
+    }
+    #btn_miss0,#btn_miss1{
+        width: 70% !important;
+    }
+    #btn_left_wins,#btn_right_wins{
+        width: 70% !important;
+    }
+    #btn_next_round,#btn_goto_finals{
+        width: 70% !important;
+    }
+}
