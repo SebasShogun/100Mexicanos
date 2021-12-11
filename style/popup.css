@@ -80,7 +80,7 @@ body{
 table {
 	/* for horizontal centering */
 	margin: 0 auto;
-	width: 800px;
+	width: 80%;
 
 }
 img{
@@ -215,4 +215,14 @@ img{
 .invisible {
 	visibility: hidden;
 }
-
+@media screen and (max-width: 950px){
+	#container{
+		width: 90vw;
+	}
+.container-we{
+	background-color:#000000;
+	margin: 15px 10px 15px 10px;
+	padding: 50px 5px;
+	width: 90vw;
+}
+}
