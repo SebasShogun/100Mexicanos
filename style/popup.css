@@ -44,7 +44,6 @@ body{
 
 .intermitente{
 	animation: infinite resplandorAnimation 7s;
-	
 }
 @keyframes resplandorAnimation {
 	0%,100%{

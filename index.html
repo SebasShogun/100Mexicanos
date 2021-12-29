@@ -584,71 +584,77 @@ along with Clan Contest.  If not, see http://www.gnu.org/licenses/.
 </head>
 
 <body>
-<div class="header">
-	<br />
-	<h5>PANEL DE CONTROL </h5>
-	<p>Da click en el botón para inicial el juego</p>
-	<input type="button" id="btn_open_win" value="Abrir juego" onclick="open_game_window();"></input><br />
-	<input type="button" id="btn_undo" value="< atras" onclick="state.undo();"></input>
-	<input type="button" id="btn_redo" value="siguiente >" onclick="state.redo();"></input>
-	<br /><br />
-</div>
 
-<!-- splash -->
-<div class="screen name-team" id="view_splash">
-	<h2>NOMBRES DE EQUIPOS</h2>
-	<br>
-	<label for="txt_name_0">EQUIPO IZQUIERDA: </label><br /><input type="text" id="txt_name_0" id="txt_name_0"></input><br /><br />
-	<label for="txt_name_1">EQUIPO DERECHA: </label><br /><input type="text" id="txt_name_1" id="txt_name_1"></input><br /><br />
-	<input type="button" id="btn_goto_rounds" value="Empezar - Ronda 1" onclick="goto_screen('rounds');"></input>
-</div>
+<div class="game">
 
-<!-- round 1 to 4 -->
-<div class="screen" id="view_rounds">
-	<h2>RONDA <span id="round"></span></h2> <br />
-	<h3>RESPUESTAS</h3><br />
-	<div id="answers"><!-- placeholder for answers, filled using JS --></div><br />
-	<div id="misses">
-		<input type="button" id="btn_miss0" value="Error (Equipo Izq)" onclick="wrong_answer_given(0);"></input>
-		<input type="button" id="btn_miss1" value="Error (Equipo Der)" onclick="wrong_answer_given(1);"></input>
+	<div class="header">
+		<br />
+		<h5>PANEL DE CONTROL </h5>
+		<p>Da click en el botón para inicial el juego</p>
+		<input type="button" id="btn_open_win" value="Abrir juego" onclick="open_game_window();"></input><br />
+		<div><img src="gfx/logo.png" /></div>
+		<input type="button" id="btn_undo" value="< atras" onclick="state.undo();"></input>
+		<input type="button" id="btn_redo" value="siguiente >" onclick="state.redo();"></input>
+		<br /><br />
 	</div>
-	<input type="button" id="btn_left_wins" value="Gana Puntos Izquierda " onclick="team_won_round(0);"></input>
-	<input type="button" id="btn_right_wins" value="Gana Puntos Derecha" onclick="team_won_round(1);"></input><br /><br />
-	<h5>Una vez terminada la ronda dar al botón</h5>
-	<input type="button" id="btn_next_round" value="Siguiente Ronda >" onclick="goto_next_round();"></input><br /><br />
-	<h5>Funcional hasta acumular los puntos</h5>
-	<input type="button" id="btn_goto_finals" value="Final" onclick="goto_screen('finals');"></input>
-</div>
 
-<!-- finals -->
-<div class="screen" id="view_finals">
-	<h2>FINAL</h2><br />
-	<h3>PREGUNTAS</h3><br />
-	<div class="tabla">
-		<div><ul id="questions_p0"><!-- placeholder for questions, filled using JS --></ul></div>
-		<div><ul id="questions_p1"><!-- placeholder for questions, filled using JS --></ul></div>
+	<!-- splash -->
+	<div class="screen name-team" id="view_splash">
+		<h2>NOMBRES DE EQUIPOS</h2>
+		<br>
+		<label for="txt_name_0">EQUIPO IZQUIERDA: </label><br /><input type="text" id="txt_name_0" id="txt_name_0"></input><br /><br />
+		<label for="txt_name_1">EQUIPO DERECHA: </label><br /><input type="text" id="txt_name_1" id="txt_name_1"></input><br /><br />
+		<input type="button" id="btn_goto_rounds" value="Empezar - Ronda 1" onclick="goto_screen('rounds');"></input>
 	</div>
-	<br />
-	<h3>TIEMPO</h3>
-	<input type="button" id="btn_timer_p1" value="Tiempo para el primer jugador" onclick="timer.init(0);"></input>
-	<input type="button" id="btn_timer_p2" value="Tiempo para el segundo jugador" onclick="timer.init(1);"></input>
-	<input type="button" id="btn_timer_start" value="Empezar Tiempo" onclick="timer.start();"></input>
-	<br />
-	<h3>FIN DEL JUEGO</h3>
-	<input type="button" id="btn_goto_end" value="Fin del juego" onclick="goto_screen('end');"></input>
-</div>
 
-<!-- end -->
-<div class="screen" id="view_end">
-	<h2>Juego Terminado</h2>
-	:D
-</div>
+	<!-- round 1 to 4 -->
+	<div class="screen" id="view_rounds">
+		<h2>RONDA <span id="round"></span></h2> <br />
+		<h3>RESPUESTAS</h3><br />
+		<div id="answers"><!-- placeholder for answers, filled using JS --></div><br />
+		<div id="misses">
+			<input type="button" id="btn_miss0" value="Error (Equipo Izq)" onclick="wrong_answer_given(0);"></input>
+			<input type="button" id="btn_miss1" value="Error (Equipo Der)" onclick="wrong_answer_given(1);"></input>
+		</div>
+		<input type="button" id="btn_left_wins" value="Gana Puntos Izquierda " onclick="team_won_round(0);"></input>
+		<input type="button" id="btn_right_wins" value="Gana Puntos Derecha" onclick="team_won_round(1);"></input><br /><br />
+		<h5>Una vez terminada la ronda dar al botón</h5>
+		<input type="button" id="btn_next_round" value="Siguiente Ronda >" onclick="goto_next_round();"></input><br /><br />
+		<h5>Funcional hasta acumular los puntos</h5>
+		<input type="button" id="btn_goto_finals" value="Final" onclick="goto_screen('finals');"></input>
+	</div>
 
-<div class="sounds">
-<h2>SONIDOS</h2><br />
-	<input type="checkbox" id="chk_mute" onchange="mute_changed();"><b> SILENCIAR</b></input><br />
-	<div id="audio" style="padding-top: 1%;"><!-- placeholder for play buttons, filled using JS --></div>
-	<div id="audiodummy"><!-- placeholder for audio objects, filled using JS --></div>
+	<!-- finals -->
+	<div class="screen" id="view_finals">
+		<h2>FINAL</h2><br />
+		<h3>PREGUNTAS</h3><br />
+		<div class="tabla">
+			<div><ul id="questions_p0"><!-- placeholder for questions, filled using JS --></ul></div>
+			<div><ul id="questions_p1"><!-- placeholder for questions, filled using JS --></ul></div>
+		</div>
+		<br />
+		<h3>TIEMPO</h3>
+		<input type="button" id="btn_timer_p1" value="Tiempo para el primer jugador" onclick="timer.init(0);"></input>
+		<input type="button" id="btn_timer_p2" value="Tiempo para el segundo jugador" onclick="timer.init(1);"></input>
+		<input type="button" id="btn_timer_start" value="Empezar Tiempo" onclick="timer.start();"></input>
+		<br />
+		<h3>FIN DEL JUEGO</h3>
+		<input type="button" id="btn_goto_end" value="Fin del juego" onclick="goto_screen('end');"></input>
+	</div>
+
+	<!-- end -->
+	<div class="screen" id="view_end">
+		<h2>Juego Terminado</h2>
+		:D
+	</div>
+
+	<div class="sounds">
+	<h2>SONIDOS</h2><br />
+		<input type="checkbox" id="chk_mute" onchange="mute_changed();"><b> SILENCIAR</b></input><br />
+		<div id="audio" style="padding-top: 1%;"><!-- placeholder for play buttons, filled using JS --></div>
+		<div id="audiodummy"><!-- placeholder for audio objects, filled using JS --></div>
+	</div>
+
 </div>
 </body>
 </html> 

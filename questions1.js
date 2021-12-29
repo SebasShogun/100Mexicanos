@@ -18,8 +18,8 @@
 
 // questions for rounds
 var questions_rounds = [
-	'Menciona algo a lo que los niños le temen',
-	'Nombra animales que se tengan como mascota.',
+	'Princesas de Disney',
+	'Nombra animales que se tengan como mascota',
 	'Dinos el nombre (especie) de un pez',
 	'Además de alcohol, menciona algo que no falta en un botiquín',
 	'Propositos de año nuevo',
